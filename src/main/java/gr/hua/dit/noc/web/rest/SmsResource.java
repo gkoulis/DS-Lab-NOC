@@ -31,7 +31,7 @@ public class SmsResource {
         this.smsService = smsService;
     }
 
-    @PostMapping(value = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<SendSmsResult> sendSms(@RequestBody @Valid SendSmsRequest sendSmsRequest) {
         final SendSmsResult sendSmsResult = this.smsService.send(sendSmsRequest);
         return ResponseEntity.ok(sendSmsResult);
